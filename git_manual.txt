@@ -1,0 +1,11 @@
+git init - initializare folder
+git add . - adauga fisierele modificate
+git commit -m {mesaj} - salveaza pe disc modifcarile
+git log - putem vedea modificarile
+git checkout - {incarcam o versiune anterioara, dar ajungem intr-un branch diferit}
+git remote add origin {site} - legam folder-ul cu github
+git push -u origin {branch} - incarcam pe github
+git checkout -b {new_branch} - facem alt branch
+git branch - putem vedea branchurile
+git pull - descarca de pe github modificarile
+

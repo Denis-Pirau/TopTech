@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptopuri - TopTech</title>
+</head>
+<body>
+
+    <header>
+        <h1><a href="index.html">TopTech</a></h1>
+        <nav>
+            <a href="index.html">Acasă</a> | 
+            <a href="cos.html">Coș (0)</a>
+        </nav>
+    </header>
+
+    <main>
+        <nav aria-label="breadcrumb">
+            <p>Acasă > <strong>Laptopuri</strong></p>
+        </nav>
+
+        <div style="display: flex; gap: 20px;">
+            
+            <aside style="width: 250px; padding: 15px; border-right: 1px solid #ddd;">
+                <h3>Filtrează</h3>
+                
+                <form>
+                    <h4>Preț</h4>
+                    <input type="range" min="0" max="10000">
+                    <p>0 - 10.000 RON</p>
+
+                    <h4>Brand</h4>
+                    <input type="checkbox" id="asus" name="brand"> <label for="asus">ASUS</label><br>
+                    <input type="checkbox" id="lenovo" name="brand"> <label for="lenovo">Lenovo</label><br>
+                    <input type="checkbox" id="hp" name="brand"> <label for="hp">HP</label><br>
+                    
+                    <h4>Memorie RAM</h4>
+                    <input type="checkbox" id="8gb" name="ram"> <label for="8gb">8 GB</label><br>
+                    <input type="checkbox" id="16gb" name="ram"> <label for="16gb">16 GB</label><br>
+                    
+                    <br>
+                    <button type="submit">Aplică Filtre</button>
+                </form>
+            </aside>
+
+            <section style="flex-grow: 1;">
+                <h2>Laptopuri Gaming & Office</h2>
+                <p>Am găsit 3 produse.</p>
+
+                <div class="grid-produse">
+                    
+                    <article class="produs-card" style="border: 1px solid #eee; padding: 10px; margin-bottom: 10px; display: inline-block; width: 200px;">
+                        <img src="imagini/laptop-asus.jpg" alt="Laptop ASUS" width="150">
+                        <h3><a href="produs.html">ASUS TUF A15</a></h3>
+                        <p class="pret">3.499 RON</p>
+                        <button>Adaugă în coș</button>
+                    </article>
+
+                    <article class="produs-card" style="border: 1px solid #eee; padding: 10px; margin-bottom: 10px; display: inline-block; width: 200px;">
+                        <img src="imagini/laptop-lenovo.jpg" alt="Laptop Lenovo" width="150">
+                        <h3><a href="produs.html">Lenovo IdeaPad</a></h3>
+                        <p class="pret">2.100 RON</p>
+                        <button>Adaugă în coș</button>
+                    </article>
+
+                    <article class="produs-card" style="border: 1px solid #eee; padding: 10px; margin-bottom: 10px; display: inline-block; width: 200px;">
+                        <img src="imagini/laptop-hp.jpg" alt="Laptop HP" width="150">
+                        <h3><a href="produs.html">HP Victus 15</a></h3>
+                        <p class="pret">3.200 RON</p>
+                        <button>Adaugă în coș</button>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TopTech.</p>
+    </footer>
+
+</body>
+</html>

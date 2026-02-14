@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coșul meu - TopTech</title>
+</head>
+<body>
+
+    <header>
+        <h1><a href="index.html">TopTech</a></h1>
+        <nav>
+            <a href="index.html">Continuă cumpărăturile</a> | 
+            <a href="cont.html">Contul Meu</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Coșul de cumpărături</h2>
+
+        <table border="1" width="100%" cellpadding="10">
+            <thead>
+                <tr style="background-color: #f0f0f0;">
+                    <th>Produs</th>
+                    <th>Preț Unitar</th>
+                    <th>Cantitate</th>
+                    <th>Total</th>
+                    <th>Acțiuni</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="imagini/laptop-asus.jpg" width="50" style="vertical-align: middle;">
+                        <strong>Laptop ASUS TUF A15</strong>
+                    </td>
+                    <td>3.499 RON</td>
+                    <td>
+                        <input type="number" value="1" min="1" max="5">
+                    </td>
+                    <td>3.499 RON</td>
+                    <td><button style="color:red;">Șterge</button></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img src="imagini/mouse-logitech.jpg" width="50" style="vertical-align: middle;">
+                        <strong>Mouse Logitech G502</strong>
+                    </td>
+                    <td>250 RON</td>
+                    <td>
+                        <input type="number" value="2" min="1">
+                    </td>
+                    <td>500 RON</td>
+                    <td><button style="color:red;">Șterge</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <section style="border: 1px solid #000; padding: 20px; width: 300px; margin-left: auto;">
+            <h3>Sumar Comandă</h3>
+            <p>Subtotal: <strong>3.999 RON</strong></p>
+            <p>Livrare: <strong>20 RON</strong></p>
+            <hr>
+            <p style="font-size: 1.2em;">TOTAL: <strong>4.019 RON</strong></p>
+            <button style="width: 100%; padding: 10px; background-color: black; color: white;">Finalizează Comanda</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TopTech.</p>
+    </footer>
+
+</body>
+</html>

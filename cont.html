@@ -18,12 +18,12 @@
     <main>
         <h2 style="text-align: center;">Contul meu</h2>
 
-        <div style="display: flex; gap: 50px; justify-content: center;">
-            
-            <section style="border: 1px solid #ccc; padding: 20px; width: 40%;">
+        <div style="display: flex; gap: 50px; justify-content: center;"> <!-- am folosit p structura de tip coloane-->
+            <!-- Impartirea paginii in 2 sectiuni: -->
+            <section style="border: 1px solid #ccc; padding: 20px; width: 40%;"> <!-- sectiunea pentru logare-->
                 <h3>Logare în cont</h3>
-                <form action="#" method="post">
-                    <label for="email">Email:</label><br>
+                <form action="#" method="post"> <!--am folosut method post pentru trimiterea datelor confidentiale -->
+                    <label for="email">Email:</label><br> 
                     <input type="email" id="email" name="email" required style="width: 90%;"><br><br>
                     
                     <label for="pass">Parolă:</label><br>
@@ -35,7 +35,7 @@
                 </form>
             </section>
 
-            <section style="border: 1px solid #ccc; padding: 20px; width: 40%;">
+            <section style="border: 1px solid #ccc; padding: 20px; width: 40%;"> <!-- sectiunea pentru inregistrare -->
                 <h3>Înregistrare</h3>
                 <p>Creează un cont pentru a urmări comanda și a salva produsele favorite.</p>
                 
@@ -54,6 +54,7 @@
 
                     <label for="pass-confirm">Confirmă parola:</label><br>
                     <input type="password" id="pass-confirm" name="password_confirm" required style="width: 90%;"><br><br>
+                    <!-- Am folosit mai multe tipui de imputL text, email, tel, pass-->
 
                     <button type="submit">Creează Cont</button>
                 </form>

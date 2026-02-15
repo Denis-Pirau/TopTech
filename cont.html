@@ -16,12 +16,12 @@
     </header>
 
     <main>
-        <h2 style="text-align: center;">Contul Meu</h2>
+        <h2 style="text-align: center;">Contul meu</h2>
 
         <div style="display: flex; gap: 50px; justify-content: center;">
             
             <section style="border: 1px solid #ccc; padding: 20px; width: 40%;">
-                <h3>Am deja cont</h3>
+                <h3>Logare în cont</h3>
                 <form action="#" method="post">
                     <label for="email">Email:</label><br>
                     <input type="email" id="email" name="email" required style="width: 90%;"><br><br>
@@ -36,14 +36,24 @@
             </section>
 
             <section style="border: 1px solid #ccc; padding: 20px; width: 40%;">
-                <h3>Client nou</h3>
+                <h3>Înregistrare</h3>
                 <p>Creează un cont pentru a urmări comanda și a salva produsele favorite.</p>
+                
                 <form action="#" method="post">
                     <label for="nume">Nume complet:</label><br>
                     <input type="text" id="nume" name="nume" required style="width: 90%;"><br><br>
 
                     <label for="email-nou">Email:</label><br>
                     <input type="email" id="email-nou" name="email" required style="width: 90%;"><br><br>
+
+                    <label for="telefon">Număr de telefon:</label><br>
+                    <input type="tel" id="telefon" name="telefon" placeholder="0xxx xxx xxx" required style="width: 90%;"><br><br>
+
+                    <label for="pass-nou">Parolă:</label><br>
+                    <input type="password" id="pass-nou" name="password_nou" required style="width: 90%;"><br><br>
+
+                    <label for="pass-confirm">Confirmă parola:</label><br>
+                    <input type="password" id="pass-confirm" name="password_confirm" required style="width: 90%;"><br><br>
 
                     <button type="submit">Creează Cont</button>
                 </form>

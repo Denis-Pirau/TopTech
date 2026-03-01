@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
+    <link rel="stylesheet" href="../css/stiluri.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samsung Galaxy M35 128 GB Blue Dark - TopTech</title>
@@ -8,54 +9,53 @@
 <body>
 
     <header>
-        <h1><a href="index.html">TopTech</a></h1>
+        <h1><a href="../index.html">TopTech</a></h1>
         <nav>
-            <a href="index.html">Înapoi la magazin</a> | 
+            <a href="../index.html">Înapoi la magazin</a> | 
             <a href="cos.html">Coș</a>
         </nav>
     </header>
 
     <main>
-        <nav aria-label="breadcrumb">
+        <nav aria-label="breadcrumb" class="breadcrumb">
             <p>Acasă > Telefoane > Smartphone > <strong>Samsung Galaxy M35</strong></p>
         </nav>
 
-        <section id="detalii-produs">
-            <figure> <!-- AM folosit <figure> pentru a adauga si o legenda pentru imagine-->
-                <img src="imagini/samsung_m35.png" alt="Samsung Galaxy M35 Dark Blue" width="400">
+        <section class="produs-layout">
+            <figure class="produs-imagine"> 
+                <img src="../imagini/samsung_m35.png" alt="Samsung Galaxy M35 Dark Blue">
                 <figcaption>ID produs: 00-01147084-001</figcaption>
             </figure>
 
-            <div class="info-cumparare"> <!-- zona de cumparare + formularul-->
+            <div class="info-cumparare"> 
                 <h2>Samsung Galaxy M35 128 GB Blue Dark</h2>
                 <p class="cod-produs">Cod produs: #M356BDBD</p>
                 
                 <h3 class="pret-mare">3.999 MDL</h3>
-                <p class="disponibilitate" style="color: green;">✔ Disponibil în depozit</p>
+                <p class="disponibilitate">✔ Disponibil în depozit</p>
 
-                <form action="/adauga-in-cos" method="post">
+                <form action="/adauga-in-cos" method="post" class="form-adaugare">
                     <label for="cantitate">Cantitate:</label>
                     <input type="number" id="cantitate" name="cantitate" value="1" min="1" max="5">
-                    <br><br>
-                    <button type="submit"><strong>ADAUGĂ ÎN COȘ</strong></button>
+                    <button type="submit" class="btn-adauga"><strong>ADAUGĂ ÎN COȘ</strong></button>
                 </form>
 
-                <h4>Descriere scurtă:</h4>
-                <p>
-                    Un campion al autonomiei cu o baterie masivă de <strong>6000 mAh</strong> și încărcare rapidă 25W. 
-                    Experimentează culori vii pe ecranul <strong>Super AMOLED de 6.6"</strong> cu rată de refresh de 120Hz. 
-                    Performanță asigurată de procesorul Exynos 1380 (5nm) și sistemul de camere versatil de 50MP cu OIS (Stabilizare Optică).
-                </p>
+                <div class="descriere-scurta">
+                    <h4>Descriere scurtă:</h4>
+                    <p>
+                        Un campion al autonomiei cu o baterie masivă de <strong>6000 mAh</strong> și încărcare rapidă 25W. 
+                        Experimentează culori vii pe ecranul <strong>Super AMOLED de 6.6"</strong> cu rată de refresh de 120Hz. 
+                        Performanță asigurată de procesorul Exynos 1380 (5nm) și sistemul de camere versatil de 50MP cu OIS (Stabilizare Optică).
+                    </p>
+                </div>
             </div>
         </section>
 
-        <hr> <!-- thematic break-->
-
         <section id="specificatii"> 
-            <h3>Specificații Tehnice</h3>
-            <table border="1" width="100%"> <!-- Tabelul cu specificatii -->
+            <h3 class="titlu-specificatii">Specificații Tehnice</h3>
+            <table class="tabel-specificatii"> 
                 <tr>
-                    <th colspan="2" align="left" style="background-color: #f0f0f0;">Ecran & Design</th>
+                    <th colspan="2">Ecran & Design</th>
                 </tr>
                 <tr>
                     <td>Tip Display</td>
@@ -67,7 +67,7 @@
                 </tr>
 
                 <tr>
-                    <th colspan="2" align="left" style="background-color: #f0f0f0;">Hardware</th>
+                    <th colspan="2">Hardware</th>
                 </tr>
                 <tr>
                     <td>Procesor (CPU)</td>
@@ -83,7 +83,7 @@
                 </tr>
 
                 <tr>
-                    <th colspan="2" align="left" style="background-color: #f0f0f0;">Camere Foto</th>
+                    <th colspan="2">Camere Foto</th>
                 </tr>
                 <tr>
                     <td>Cameră Principală</td>
@@ -95,7 +95,7 @@
                 </tr>
 
                  <tr>
-                    <th colspan="2" align="left" style="background-color: #f0f0f0;">Baterie & Software</th>
+                    <th colspan="2">Baterie & Software</th>
                 </tr>
                 <tr>
                     <td>Capacitate Baterie</td>
@@ -113,9 +113,17 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 TopTech.</p> <!-- copyright pentru magazinul nostru-->
-    </footer>
+<footer class="footer-principal">
+    <section class="footer-sectiune">
+        <h4 class="footer-titlu">Informații Clienți</h4>
+        <ul class="footer-lista">
+            <li><a href="html/info.html#retur" class="footer-link">Politica de retur</a></li>
+            <li><a href="html/info.html#garantie" class="footer-link">Garanție</a></li>
+            <li><a href="html/info.html#livrare" class="footer-link">Livrare</a></li>
+        </ul>
+    </section>
+    <p class="footer-copyright">&copy; 2026 TopTech</p>
+</footer>
 
 </body>
 </html>

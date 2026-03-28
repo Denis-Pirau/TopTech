@@ -19,81 +19,67 @@
     <main>
         <h2>Coșul de cumpărături</h2>
 
-        <table class="tabel-cos">
-            <thead>
-                <tr>
-                    <th>Produs</th>
-                    <th>Preț Unitar</th>
-                    <th>Cantitate</th>
-                    <th>Total</th>
-                    <th>Acțiuni</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <img src="../imagini/RTX4060.webp" alt="Placa Video MSI">
-                        <strong>Placă Video MSI RTX 4060 8GB</strong>
-                    </td>
-                    <td>6.499 MDL</td>
-                    <td>
-                        <input type="number" value="1" min="1" max="5">
-                    </td>
-                    <td>6.499 MDL</td>
-                    <td><button class="btn-sterge">Șterge</button></td>
-                </tr>
+        <div id="continut-cos">
+            <table class="tabel-cos">
+                <thead>
+                    <tr>
+                        <th>Produs</th>
+                        <th>Preț Unitar</th>
+                        <th>Cantitate</th>
+                        <th>Total</th>
+                        <th>Acțiuni</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-cos">
+                    <tr><td colspan="5" style="text-align: center;">Se încarcă coșul...</td></tr>
+                </tbody>
+            </table>
 
-                <tr>
-                    <td>
-                        <img src="../imagini/ramkingstonfury.webp" alt="RAM Kingston">
-                        <strong>RAM Kingston FURY 16GB DDR5</strong>
-                    </td>
-                    <td>1.199 MDL</td>
-                    <td>
-                        <input type="number" value="1" min="1" max="10">
-                    </td>
-                    <td>1.199 MDL</td>
-                    <td><button class="btn-sterge">Șterge</button></td>
-                </tr>
-            </tbody>
-        </table>
+            <section class="sumar-comanda">
+                <h3>Comanda dumneavoastră</h3>
+                
+                <div class="sumar-rand">
+                    <span>Subtotal:</span>
+                    <strong id="subtotal">0 MDL</strong>
+                </div>
+                
+                <div class="sumar-rand">
+                    <span>Livrare:</span>
+                    <strong class="text-gratuit">GRATUIT</strong>
+                </div>
+                
+                <hr>
+                
+                <div class="sumar-rand total">
+                    <span>TOTAL:</span>
+                    <strong id="total">0 MDL</strong>
+                </div>
+                
+                <button class="btn-finalizare">Finalizează Comanda</button>
+            </section>
+        </div>
 
-        <section class="sumar-comanda">
-            <h3>Comanda dumneavoastră</h3>
-            
-            <div class="sumar-rand">
-                <span>Subtotal:</span>
-                <strong>7.698 MDL</strong>
-            </div>
-            
-            <div class="sumar-rand">
-                <span>Livrare:</span>
-                <strong class="text-gratuit">GRATUIT</strong>
-            </div>
-            
-            <hr>
-            
-            <div class="sumar-rand total">
-                <span>TOTAL:</span>
-                <strong>7.698 MDL</strong>
-            </div>
-            
-            <button class="btn-finalizare">Finalizează Comanda</button>
-        </section>
-
+        <div id="cos-gol" style="display: none; text-align: center; padding: 40px;">
+            <h3>Coșul tău este gol</h3>
+            <p>Adaugă produse pentru a continua.</p>
+            <a href="../index.html" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background-color: #bb86fc; color: black; border-radius: 8px; text-decoration: none;">Vezi produse</a>
+        </div>
     </main>
 
     <footer class="footer-principal">
         <section class="footer-sectiune">
             <h4 class="footer-titlu">Informații Clienți</h4>
             <ul class="footer-lista">
-                <li><a href="html/info.html#retur" class="footer-link">Politica de retur</a></li>
-                <li><a href="html/info.html#garantie" class="footer-link">Garanție</a></li>
-                <li><a href="html/info.html#livrare" class="footer-link">Livrare</a></li>
+                <li><a href="info.html#retur" class="footer-link">Politica de retur</a></li>
+                <li><a href="info.html#garantie" class="footer-link">Garanție</a></li>
+                <li><a href="info.html#livrare" class="footer-link">Livrare</a></li>
             </ul>
         </section>
         <p class="footer-copyright">&copy; 2026 TopTech</p>
-    </footer>
+        <script src="../javascript/auth.js"></script>
+        <script src="../javascript/gestionare_cos.js"></script>
+    <script src="../javascript/cos_page.js"></script>
+</footer>
 
 </body>
 </html>

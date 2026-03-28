@@ -136,7 +136,7 @@ header nav ul {
 /* 3. sectiunea produse */
 .grid-produse {
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
     gap: 25px;
     margin-top: 20px;
 }
@@ -145,7 +145,7 @@ header nav ul {
     background-color: #1e1e1e;
     border: 1px solid #333 !important;
     border-radius: 12px;
-    padding: 20px;
+    padding: 12px 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -159,22 +159,23 @@ header nav ul {
 
 .produs-card img {
     max-width: 100%;
-    height: 160px;
+    height: 150px;
+    width: auto;
     object-fit: contain;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .produs-card h3 {
-    font-size: 1.1rem;
-    margin: 10px 0;
+    font-size: 1rem;
+    margin: 8px 0;
     flex-grow: 1;
 }
 
 .produs-card .pret {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #bb86fc;
-    margin: 5px 0;
+    margin: 4px 0;
 }
 
 .produs-card .pret del {
@@ -266,6 +267,7 @@ header nav ul {
 /* sectiune */
 .auth-sectiune {
     background-color: #1e1e1e;
+
     border: 1px solid #333;
     border-radius: 12px;
     padding: 30px;

@@ -16,55 +16,32 @@
     </header>
 
     <main>
-        <nav aria-label="breadcrumb"> <p>Acasă > <strong>Componente PC</strong></p>
+        <nav aria-label="breadcrumb">
+            <p id="breadcrumb">Acasă > <a href="../index.html">Categorii</a> > <strong>Categorie</strong></p>
         </nav>
 
         <div style="display: flex; gap: 20px;">
-            
-            <aside style="width: 250px; padding: 15px; border-right: 1px solid #ddd;"> <h3>Filtrează</h3>
-                
-                <form>
+            <aside style="width: 250px; padding: 15px; border-right: 1px solid #ddd;">
+                <h3>Filtrează</h3>
+                <form id="formular-filtre" onsubmit="return false;">
                     <h4>Preț</h4>
-                    <input type="range" min="0" max="50000">
-                    <p>0 - 50.000 MDL</p>
+                    <input type="range" min="0" max="50000" id="filter-pret" value="50000">
+                    <p id="range-pret">0 - 50.000 MDL</p>
 
                     <h4>Brand</h4>
-                    <input type="checkbox" id="samsung" name="brand"> <label for="samsung">Samsung</label><br>
-                    <input type="checkbox" id="kingston" name="brand"> <label for="kingston">Kingston</label><br>
-                    <input type="checkbox" id="nvidia" name="brand"> <label for="nvidia">Nvidia</label><br>
-                    
+                    <input type="checkbox" id="samsung" name="brand" value="Samsung"> <label for="samsung">Samsung</label><br>
+                    <input type="checkbox" id="kingston" name="brand" value="Kingston"> <label for="kingston">Kingston</label><br>
+                    <input type="checkbox" id="nvidia" name="brand" value="Nvidia"> <label for="nvidia">Nvidia</label><br>
+
                     <br>
-                    <button type="submit">Aplică Filtre</button>
+                    <button type="button" id="aplica-filtre">Aplică Filtre</button>
                 </form>
             </aside>
 
-            <section style="flex-grow: 1;"> <h2>Componente PC</h2>
-                <p>Am găsit 3 produse.</p>
-
-                <div class="grid-produse">
-                    
-                    <article class="produs-card">
-                        <img src="../imagini/ssd_samsung.jpg" alt="SSD Samsung 980 PRO 1TB" width="150">
-                        <h3><a href="produs.html">SSD Samsung 980 PRO 1TB</a></h3>
-                        <p class="pret">1770 MDL</p>
-                        <button>Adaugă în coș</button>
-                    </article>
-
-                    <article class="produs-card">
-                        <img src="../imagini/RTX4060.webp" alt="Placă Video MSI RTX 4060" width="150">
-                        <h3><a href="produs.html">Placă Video MSI RTX 4060 8GB</a></h3>
-                        <p class="pret">6.499 MDL</p>
-                        <button>Adaugă în coș</button>
-                    </article>
-
-                    <article class="produs-card">
-                        <img src="../imagini/ramkingstonfury.webp" alt="RAM Kingston Fury" width="150">
-                        <h3><a href="produs.html">RAM Kingston FURY 16GB DDR5</a></h3>
-                        <p class="pret">1.199 MDL</p>
-                        <button>Adaugă în coș</button>
-                    </article>
-
-                </div>
+            <section style="flex-grow: 1;">
+                <h2 id="titlu-categorie">Categorie</h2>
+                <p id="numar-produse">Se încarcă produsele...</p>
+                <div class="grid-produse" id="grid-produse"></div>
             </section>
         </div>
     </main>
@@ -79,6 +56,9 @@
         </ul>
     </section>
     <p class="footer-copyright">&copy; 2026 TopTech</p>
+    <script src="../javascript/auth.js"></script>
+    <script src="../javascript/gestionare_cos.js"></script>
+    <script src="../javascript/categorie_page.js"></script>
 </footer>
 
 </body>

@@ -12,22 +12,25 @@
         <h1><a href="../index.html">TopTech</a></h1>
         <nav>
             <a href="../index.html">Acasă</a> | 
-            <a href="cos.html">Coș (2)</a>
+            <a href="cos.html">Coș (0)</a>
         </nav>
     </header>
 
     <main>
         <h2 class="auth-titlu">Contul meu</h2>
 
-        <div class="auth-container"> 
+        <p id="mesaj-auth" hidden></p>
+
+        <div id="auth-forms" class="auth-container">
             <section class="auth-sectiune">
                 <h3>Logare în cont</h3>
-                <form action="#" method="post">
+                <p>Fiecare cont are coș separat (salvat în browser, ca datele contului).</p>
+                <form id="form-login" action="#" method="post">
                     <label for="email">Email:</label><br> 
-                    <input type="email" id="email" name="email" required><br><br>
+                    <input type="email" id="email" name="email" required autocomplete="username"><br><br>
                     
                     <label for="pass">Parolă:</label><br>
-                    <input type="password" id="pass" name="password" required><br><br>
+                    <input type="password" id="pass" name="password" required autocomplete="current-password"><br><br>
                     
                     <button type="submit">Intră în cont</button>
                     <br><br>
@@ -37,40 +40,53 @@
 
             <section class="auth-sectiune">
                 <h3>Înregistrare</h3>
-                <p>Creează un cont pentru a urmări comanda și a salva produsele favorite.</p>
+                <p>Creează un cont pentru a urmări comanda și a avea coșul salvat pe cont.</p>
                 
-                <form action="#" method="post">
+                <form id="form-inregistrare" action="#" method="post">
                     <label for="nume">Nume complet:</label><br>
-                    <input type="text" id="nume" name="nume" required><br><br>
+                    <input type="text" id="nume" name="nume" required autocomplete="name"><br><br>
 
                     <label for="email-nou">Email:</label><br>
-                    <input type="email" id="email-nou" name="email" required><br><br>
+                    <input type="email" id="email-nou" name="email" required autocomplete="email"><br><br>
 
                     <label for="telefon">Număr de telefon:</label><br>
-                    <input type="tel" id="telefon" name="telefon" placeholder="0xx xxx xxx" required><br><br>
+                    <input type="tel" id="telefon" name="telefon" placeholder="0xx xxx xxx" required autocomplete="tel"><br><br>
 
                     <label for="pass-nou">Parolă:</label><br>
-                    <input type="password" id="pass-nou" name="password_nou" required><br><br>
+                    <input type="password" id="pass-nou" name="password_nou" required autocomplete="new-password"><br><br>
 
                     <label for="pass-confirm">Confirmă parola:</label><br>
-                    <input type="password" id="pass-confirm" name="password_confirm" required><br><br>
+                    <input type="password" id="pass-confirm" name="password_confirm" required autocomplete="new-password"><br><br>
 
                     <button type="submit">Creează Cont</button>
                 </form>
             </section>
         </div>
+
+        <section id="sectiune-profil" class="auth-container" hidden style="display:none">
+            <div class="auth-sectiune">
+                <h3>Profilul meu</h3>
+                <p><strong>Nume:</strong> <span id="profil-nume">—</span></p>
+                <p><strong>Email:</strong> <span id="profil-email">—</span></p>
+                <p><strong>Telefon:</strong> <span id="profil-telefon">—</span></p>
+                <p><button type="button" id="btn-logout">Deconectare</button></p>
+            </div>
+        </section>
     </main>
 
 <footer class="footer-principal">
     <section class="footer-sectiune">
         <h4 class="footer-titlu">Informații Clienți</h4>
         <ul class="footer-lista">
-            <li><a href="html/info.html#retur" class="footer-link">Politica de retur</a></li>
-            <li><a href="html/info.html#garantie" class="footer-link">Garanție</a></li>
-            <li><a href="html/info.html#livrare" class="footer-link">Livrare</a></li>
+            <li><a href="info.html#retur" class="footer-link">Politica de retur</a></li>
+            <li><a href="info.html#garantie" class="footer-link">Garanție</a></li>
+            <li><a href="info.html#livrare" class="footer-link">Livrare</a></li>
         </ul>
     </section>
     <p class="footer-copyright">&copy; 2026 TopTech</p>
+    <script src="../javascript/auth.js"></script>
+    <script src="../javascript/gestionare_cos.js"></script>
+    <script src="../javascript/cont_page.js"></script>
 </footer>
 </body>
 </html>

@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "nume": "Samsung Galaxy M35 128 GB Blue Dark",
+    "imagine": "imagini/samsung_m35.png",
+    "alt": "Samsung Galaxy M35 128 GB",
+    "link": "html/produs.html",
+    "pretCurent": 3999,
+    "pretVechi": 6299,
+    "stoc": "În stoc",
+    "latimeImagine": 200
+  },
+  {
+    "id": 2,
+    "nume": "Mouse Logitech G502 Hero",
+    "imagine": "imagini/mouse_logitech.webp",
+    "alt": "Mouse Logitech G502",
+    "link": "html/produs.html",
+    "pretCurent": 985,
+    "pretVechi": null,
+    "stoc": "Stoc limitat",
+    "latimeImagine": 200
+  },
+  {
+    "id": 3,
+    "nume": "SSD Samsung 980 PRO 1TB",
+    "imagine": "imagini/ssd_samsung.jpg",
+    "alt": "SSD Samsung 980",
+    "link": "html/produs.html",
+    "pretCurent": 1770,
+    "pretVechi": null,
+    "stoc": "În stoc",
+    "latimeImagine": 200
+  },
+    {
+    "id": 4,
+    "nume": "Samsung A36 5G 256 GB",
+    "imagine": "imagini/samsung_a36.jpg",
+    "alt": "Samsung A36",
+    "link": "html/produs.html",
+    "pretCurent": 6000,
+    "pretVechi": null,
+    "stoc": "În stoc",
+    "latimeImagine": 200
+  }
+
+]

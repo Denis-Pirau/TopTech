@@ -18,96 +18,39 @@
 
     <main>
         <nav aria-label="breadcrumb" class="breadcrumb">
-            <p>Acasă > Telefoane > Smartphone > <strong>Samsung Galaxy M35</strong></p>
+            <p id="breadcrumb">Acasă > <a href="../index.html">Categorii</a> > <strong>Produs</strong></p>
         </nav>
 
-        <section class="produs-layout">
-            <figure class="produs-imagine"> 
-                <img src="../imagini/samsung_m35.png" alt="Samsung Galaxy M35 Dark Blue">
-                <figcaption>ID produs: 00-01147084-001</figcaption>
+        <section class="produs-layout" id="produs-layout">
+            <figure class="produs-imagine">
+                <img id="produs-img" src="" alt="">
+                <figcaption id="cod-produs-caption">Cod produs: -</figcaption>
             </figure>
 
-            <div class="info-cumparare"> 
-                <h2>Samsung Galaxy M35 128 GB Blue Dark</h2>
-                <p class="cod-produs">Cod produs: #M356BDBD</p>
-                
-                <h3 class="pret-mare">3.999 MDL</h3>
-                <p class="disponibilitate">✔ Disponibil în depozit</p>
+            <div class="info-cumparare">
+                <h2 id="produs-nume">Se încarcă produs...</h2>
+                <p class="cod-produs" id="cod-produs">Cod produs: -</p>
+                <h3 class="pret-mare" id="produs-pret">-</h3>
+                <p class="disponibilitate" id="produs-stoc">-</p>
 
-                <form action="/adauga-in-cos" method="post" class="form-adaugare">
+                <form class="form-adaugare">
                     <label for="cantitate">Cantitate:</label>
                     <input type="number" id="cantitate" name="cantitate" value="1" min="1" max="5">
-                    <button type="submit" class="btn-adauga"><strong>ADAUGĂ ÎN COȘ</strong></button>
+                    <button type="button" class="btn-adauga" id="adauga-cos">ADAUGĂ ÎN COȘ</button>
                 </form>
 
                 <div class="descriere-scurta">
                     <h4>Descriere scurtă:</h4>
-                    <p>
-                        Un campion al autonomiei cu o baterie masivă de <strong>6000 mAh</strong> și încărcare rapidă 25W. 
-                        Experimentează culori vii pe ecranul <strong>Super AMOLED de 6.6"</strong> cu rată de refresh de 120Hz. 
-                        Performanță asigurată de procesorul Exynos 1380 (5nm) și sistemul de camere versatil de 50MP cu OIS (Stabilizare Optică).
-                    </p>
+                    <p id="descriere-scurta"></p>
                 </div>
             </div>
         </section>
 
-        <section id="specificatii"> 
+        <section id="specificatii">
             <h3 class="titlu-specificatii">Specificații Tehnice</h3>
-            <table class="tabel-specificatii"> 
+            <table class="tabel-specificatii" id="tabel-specificatii">
                 <tr>
-                    <th colspan="2">Ecran & Design</th>
-                </tr>
-                <tr>
-                    <td>Tip Display</td>
-                    <td>Super AMOLED, 120Hz, 1000 nits</td>
-                </tr>
-                <tr>
-                    <td>Diagonală / Rezoluție</td>
-                    <td>6.6 inch / 1080 x 2340 pixeli (FHD+)</td>
-                </tr>
-
-                <tr>
-                    <th colspan="2">Hardware</th>
-                </tr>
-                <tr>
-                    <td>Procesor (CPU)</td>
-                    <td>Samsung Exynos 1380 (5 nm), Octa-core</td>
-                </tr>
-                <tr>
-                    <td>Memorie RAM</td>
-                    <td>6 GB</td>
-                </tr>
-                <tr>
-                    <td>Stocare Internă</td>
-                    <td>128 GB (suportă microSDXC)</td>
-                </tr>
-
-                <tr>
-                    <th colspan="2">Camere Foto</th>
-                </tr>
-                <tr>
-                    <td>Cameră Principală</td>
-                    <td>50 MP (Wide, OIS) + 8 MP (Ultrawide) + 5 MP (Macro)</td>
-                </tr>
-                <tr>
-                    <td>Cameră Frontală</td>
-                    <td>13 MP (Wide)</td>
-                </tr>
-
-                 <tr>
-                    <th colspan="2">Baterie & Software</th>
-                </tr>
-                <tr>
-                    <td>Capacitate Baterie</td>
-                    <td>6000 mAh (Li-Po)</td>
-                </tr>
-                <tr>
-                    <td>Sistem de Operare</td>
-                    <td>Android 14, One UI 6.1</td>
-                </tr>
-                <tr>
-                    <td>Conectivitate</td>
-                    <td>5G, Wi-Fi 6, NFC, Bluetooth 5.3</td>
+                    <td colspan="2">Se încarcă...</td>
                 </tr>
             </table>
         </section>
@@ -123,6 +66,9 @@
         </ul>
     </section>
     <p class="footer-copyright">&copy; 2026 TopTech</p>
+    <script src="../javascript/auth.js"></script>
+    <script src="../javascript/gestionare_cos.js"></script>
+    <script src="../javascript/produs_page.js"></script>
 </footer>
 
 </body>

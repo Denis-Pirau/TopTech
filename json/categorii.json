@@ -1,0 +1,8 @@
+[
+  { "id": "componente-pc", "nume": "Componente PC" },
+  { "id": "laptopuri", "nume": "Laptopuri" },
+  { "id": "monitoare", "nume": "Monitoare" },
+  { "id": "periferice", "nume": "Periferice" },
+  { "id": "networking", "nume": "Networking" },
+  { "id": "smartphones", "nume": "Smartphones" }
+]

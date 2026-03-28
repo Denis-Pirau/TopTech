@@ -70,7 +70,6 @@ async function initProdusPage() {
             breadcrumb.innerHTML = `Acasă > <a href="../index.html">Categorii</a> > <a href="categorie.html?categorie=${encodeURIComponent(produs.categorie)}">${categorieNume}</a> > <strong>${produs.nume}</strong>`;
         }
 
-        // Adauga event listener la butonul "Adaugă în coș"
         const btnAdauga = document.getElementById("adauga-cos");
         const inputCantitate = document.getElementById("cantitate");
         if (btnAdauga) {

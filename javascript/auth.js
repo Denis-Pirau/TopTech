@@ -1,8 +1,4 @@
-/**
- * Vanilla JS (fără Node, fără jQuery).
- * Conturile se păstrează în localStorage (cheia toptech_conturi), ca și coșul
- * (toptech_cos_guest sau toptech_cos_<id>). Nu există fișier JSON pentru conturi.
- */
+
 
 const SESSION_KEY = "toptech_session";
 const ACCOUNTS_LS_KEY = "toptech_conturi";

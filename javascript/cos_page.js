@@ -42,7 +42,6 @@ function afisareazaCos() {
 
         tbody.appendChild(row);
 
-        // Event listener pentru input cantitate
         row.querySelector(".input-cantitate").addEventListener("change", function() {
             const nouaCantitate = parseInt(this.value);
             if (nouaCantitate > 0) {
@@ -51,7 +50,6 @@ function afisareazaCos() {
             }
         });
 
-        // Event listener pentru buton șterge
         row.querySelector(".btn-sterge").addEventListener("click", function() {
             stergedinCos(item.id);
             afisareazaCos();

@@ -1,5 +1,3 @@
-
-
 const SESSION_KEY = "toptech_session";
 const ACCOUNTS_LS_KEY = "toptech_conturi";
 

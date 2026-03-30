@@ -11,8 +11,6 @@ function afiseazaMesaj(el, text, esteEroare) {
 function setVizibilitateCont(autentificat) {
     const authBox = document.getElementById("auth-forms");
     const profil = document.getElementById("sectiune-profil");
-    // .auth-container are display:flex în CSS și suprascrie atributul [hidden];
-    // folosim display inline ca să ascundem/afișăm corect.
     if (authBox) {
         authBox.hidden = autentificat;
         authBox.style.display = autentificat ? "none" : "";

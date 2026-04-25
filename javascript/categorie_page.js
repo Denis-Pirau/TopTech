@@ -49,6 +49,7 @@ async function initCategoriePage() {
     }
 
     try {
+        // Modificare AJAX
         const [categorii, produse] = await Promise.all([
             $.get("/TopTech/cgi/categorii.php"),
             $.get("/TopTech/cgi/produse.php")

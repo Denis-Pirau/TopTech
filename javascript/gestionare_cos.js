@@ -23,6 +23,7 @@ function saveCosLocal(cos) {
 
 async function adaugaInCos(produserele_id, cantitate = 1) {
     try {
+        // Modificare AJAX
         const totiProdusele = await $.get("/TopTech/cgi/produse.php");
         const produs = totiProdusele.find(p => p.id === produserele_id);
 

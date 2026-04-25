@@ -33,6 +33,7 @@ async function initProdusPage() {
     }
 
     try {
+        // Modificare AJAX
         const produse = await $.get("/TopTech/cgi/produse.php");
         const produs = produse.find(p => p.id === idProdus);
 
@@ -52,6 +53,8 @@ async function initProdusPage() {
         tabel.innerHTML = construiesteTabelSpec(produs.specificatii);
 
         let categorieNume = produs.categorie;
+        try {
+            // Modificare AJAX
             const categorii = await $.get("/TopTech/cgi/categorii.php");
             if (categorii) {
                 const categorieObiect = categorii.find(c => c.id === produs.categorie);

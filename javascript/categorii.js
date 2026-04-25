@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (!listaCategorii) return;
 
     try {
+        // Modificare AJAX
         const categorii = await $.get("/TopTech/cgi/categorii.php");
         listaCategorii.innerHTML = "";
 

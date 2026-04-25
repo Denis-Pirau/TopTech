@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     try {
+        // Modificare AJAX
         toateProdusele = await $.get("/TopTech/cgi/produse.php");
         if (!Array.isArray(toateProdusele)) {
             toateProdusele = [];
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 $("#sugestii-cautare").html("").css("display", "none");
                 return;
             }
+            // Modificare AJAX
             $.ajax({
                 url: "/TopTech/cgi/cautare.php?q=" + encodeURIComponent(str),
                 success: function(result) {

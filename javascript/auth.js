@@ -1,5 +1,4 @@
 const SESSION_KEY = "toptech_session";
-const ACCOUNTS_LS_KEY = "toptech_conturi";
 
 function getCurrentUser() {
     const raw = localStorage.getItem(SESSION_KEY);
@@ -26,25 +25,7 @@ function migrateLegacyCos() {
     localStorage.removeItem("toptech_cos");
 }
 
-function getConturiLista() {
-    const raw = localStorage.getItem(ACCOUNTS_LS_KEY);
-    if (!raw) return [];
-    try {
-        const arr = JSON.parse(raw);
-        return Array.isArray(arr) ? arr : [];
-    } catch {
-        return [];
-    }
-}
-
-function saveConturiLista(lista) {
-    localStorage.setItem(ACCOUNTS_LS_KEY, JSON.stringify(lista));
-}
-
 function initConturiStorage() {
-    if (localStorage.getItem(ACCOUNTS_LS_KEY) === null) {
-        saveConturiLista([]);
-    }
     return Promise.resolve();
 }
 
@@ -58,13 +39,6 @@ function setSession(user) {
 
 function logout() {
     localStorage.removeItem(SESSION_KEY);
-}
-
-function findContByEmail(email) {
-    const e = String(email).trim().toLowerCase();
-    return getConturiLista().find(
-        (c) => String(c.email).trim().toLowerCase() === e
-    );
 }
 
 function mergeCosItems(a, b) {
@@ -107,46 +81,40 @@ function mergeGuestCartIntoUser(userId) {
     localStorage.removeItem("toptech_cos_guest");
 }
 
-function registerCont({ nume, email, telefon, parola }) {
-    if (findContByEmail(email)) {
-        return { ok: false, mesaj: "Există deja un cont cu acest email." };
+async function registerCont({ nume, email, telefon, parola }) {
+    try {
+        const response = await fetch('/TopTech/cgi/auth.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'register', nume, email, telefon, parola })
+        });
+        const data = await response.json();
+        
+        if (data.ok) {
+            setSession(data.user);
+            mergeGuestCartIntoUser(data.user.id);
+        }
+        return data;
+    } catch (e) {
+        return { ok: false, mesaj: "Eroare de rețea." };
     }
-    const lista = getConturiLista();
-    const id =
-        typeof crypto !== "undefined" && crypto.randomUUID
-            ? crypto.randomUUID()
-            : "u_" + Date.now().toString(36) + Math.random().toString(36).slice(2);
-    lista.push({
-        id,
-        nume: String(nume).trim(),
-        email: String(email).trim(),
-        telefon: String(telefon).trim(),
-        parola: String(parola)
-    });
-    saveConturiLista(lista);
-    const user = {
-        id,
-        nume: String(nume).trim(),
-        email: String(email).trim(),
-        telefon: String(telefon).trim()
-    };
-    setSession(user);
-    mergeGuestCartIntoUser(id);
-    return { ok: true, user };
 }
 
-function loginCont(email, parola) {
-    const c = findContByEmail(email);
-    if (!c || c.parola !== String(parola)) {
-        return { ok: false, mesaj: "Email sau parolă incorectă." };
+async function loginCont(email, parola) {
+    try {
+        const response = await fetch('/TopTech/cgi/auth.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'login', email, parola })
+        });
+        const data = await response.json();
+        
+        if (data.ok) {
+            setSession(data.user);
+            mergeGuestCartIntoUser(data.user.id);
+        }
+        return data;
+    } catch (e) {
+        return { ok: false, mesaj: "Eroare de rețea." };
     }
-    const user = {
-        id: c.id,
-        nume: c.nume,
-        email: c.email,
-        telefon: c.telefon
-    };
-    setSession(user);
-    mergeGuestCartIntoUser(user.id);
-    return { ok: true, user };
 }

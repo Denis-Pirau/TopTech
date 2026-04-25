@@ -46,12 +46,12 @@ async function initPaginaCont() {
 
     const formLogin = document.getElementById("form-login");
     if (formLogin) {
-        formLogin.addEventListener("submit", function (e) {
+        formLogin.addEventListener("submit", async function (e) {
             e.preventDefault();
             afiseazaMesaj(mesaj, "", false);
             const email = document.getElementById("email").value.trim();
             const pass = document.getElementById("pass").value;
-            const rez = loginCont(email, pass);
+            const rez = await loginCont(email, pass);
             if (!rez.ok) {
                 afiseazaMesaj(mesaj, rez.mesaj, true);
                 return;
@@ -66,7 +66,7 @@ async function initPaginaCont() {
 
     const formReg = document.getElementById("form-inregistrare");
     if (formReg) {
-        formReg.addEventListener("submit", function (e) {
+        formReg.addEventListener("submit", async function (e) {
             e.preventDefault();
             afiseazaMesaj(mesaj, "", false);
             const nume = document.getElementById("nume").value.trim();
@@ -78,7 +78,7 @@ async function initPaginaCont() {
                 afiseazaMesaj(mesaj, "Parolele nu coincid.", true);
                 return;
             }
-            const rez = registerCont({
+            const rez = await registerCont({
                 nume,
                 email,
                 telefon,

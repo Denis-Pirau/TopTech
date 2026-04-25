@@ -1,9 +1,6 @@
 
 function getJsonPath(file) {
-
-    const isInHtmlFolder = window.location.pathname.includes('/html/');
-    const prefix = isInHtmlFolder ? '../' : '';
-    return prefix + 'json/' + file;
+    return "/TopTech/cgi/" + file.replace('.json', '.php');
 }
 
 function getCosLocal() {
@@ -26,8 +23,7 @@ function saveCosLocal(cos) {
 
 async function adaugaInCos(produserele_id, cantitate = 1) {
     try {
-        const jsonPath = getJsonPath('produse.json');
-        const resp = await fetch(jsonPath);
+        const resp = await fetch("/TopTech/cgi/produse.php");
         if (!resp.ok) throw new Error("Nu s-a putut incarca produsele");
 
         const totiProdusele = await resp.json();

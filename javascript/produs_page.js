@@ -33,7 +33,7 @@ async function initProdusPage() {
     }
 
     try {
-        const resp = await fetch("../json/produse.json");
+        const resp = await fetch("/TopTech/cgi/produse.php");
         if (!resp.ok) throw new Error("Nu am putut incarca produsele.");
 
         const produse = await resp.json();
@@ -56,7 +56,7 @@ async function initProdusPage() {
 
         let categorieNume = produs.categorie;
         try {
-            const categoriiResp = await fetch("../json/categorii.json");
+            const categoriiResp = await fetch("/TopTech/cgi/categorii.php");
             if (categoriiResp.ok) {
                 const categorii = await categoriiResp.json();
                 const categorieObiect = categorii.find(c => c.id === produs.categorie);

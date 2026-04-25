@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     try {
-        const raspuns = await fetch("json/produse.json");
+        const raspuns = await fetch("/TopTech/cgi/produse.php");
         if (!raspuns.ok) {
             throw new Error("Fișierul JSON nu a putut fi încărcat.");
         }

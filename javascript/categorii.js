@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (!listaCategorii) return;
 
     try {
-        const raspuns = await fetch("json/categorii.json");
+        const raspuns = await fetch("/TopTech/cgi/categorii.php");
         if (!raspuns.ok) throw new Error("JSON categorii nu poate fi incarcat");
 
         const categorii = await raspuns.json();

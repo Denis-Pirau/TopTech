@@ -50,8 +50,8 @@ async function initCategoriePage() {
 
     try {
         const [categoriiResp, produseResp] = await Promise.all([
-            fetch("../json/categorii.json"),
-            fetch("../json/produse.json")
+            fetch("/TopTech/cgi/categorii.php"),
+            fetch("/TopTech/cgi/produse.php")
         ]);
 
         if (!categoriiResp.ok || !produseResp.ok) {

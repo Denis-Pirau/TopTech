@@ -33,10 +33,7 @@ async function initProdusPage() {
     }
 
     try {
-        const resp = await fetch("/TopTech/cgi/produse.php");
-        if (!resp.ok) throw new Error("Nu am putut incarca produsele.");
-
-        const produse = await resp.json();
+        const produse = await $.get("/TopTech/cgi/produse.php");
         const produs = produse.find(p => p.id === idProdus);
 
         if (!produs) {
@@ -55,10 +52,8 @@ async function initProdusPage() {
         tabel.innerHTML = construiesteTabelSpec(produs.specificatii);
 
         let categorieNume = produs.categorie;
-        try {
-            const categoriiResp = await fetch("/TopTech/cgi/categorii.php");
-            if (categoriiResp.ok) {
-                const categorii = await categoriiResp.json();
+            const categorii = await $.get("/TopTech/cgi/categorii.php");
+            if (categorii) {
                 const categorieObiect = categorii.find(c => c.id === produs.categorie);
                 if (categorieObiect) categorieNume = categorieObiect.nume;
             }

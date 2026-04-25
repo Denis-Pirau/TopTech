@@ -11,11 +11,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     try {
-        const raspuns = await fetch("/TopTech/cgi/produse.php");
-        if (!raspuns.ok) {
-            throw new Error("Fișierul JSON nu a putut fi încărcat.");
-        }
-        toateProdusele = await raspuns.json();
+        toateProdusele = await $.get("/TopTech/cgi/produse.php");
         if (!Array.isArray(toateProdusele)) {
             toateProdusele = [];
         }
@@ -24,6 +20,33 @@ document.addEventListener("DOMContentLoaded", async function () {
             "<p>Produsele nu au putut fi încărcate.</p>";
         console.error("Eroare la încărcarea produselor:", eroare);
         return;
+    }
+
+    if (inputCautare) {
+        $("#input-cautare").keyup(function() {
+            var str = $(this).val();
+            if (str.length == 0) {
+                $("#sugestii-cautare").html("").css("display", "none");
+                return;
+            }
+            $.ajax({
+                url: "/TopTech/cgi/cautare.php?q=" + encodeURIComponent(str),
+                success: function(result) {
+                    if (result.trim() === "") {
+                        $("#sugestii-cautare").html("").css("display", "none");
+                    } else {
+                        $("#sugestii-cautare").html(result).css("display", "block");
+                    }
+                }
+            });
+        });
+        
+        // Ascunde sugestiile daca dam click in afara
+        $(document).click(function(event) {
+            if (!$(event.target).closest('#form-cautare').length) {
+                $("#sugestii-cautare").css("display", "none");
+            }
+        });
     }
 
     const params = new URLSearchParams(window.location.search);

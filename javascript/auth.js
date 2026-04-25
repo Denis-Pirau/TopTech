@@ -83,12 +83,12 @@ function mergeGuestCartIntoUser(userId) {
 
 async function registerCont({ nume, email, telefon, parola }) {
     try {
-        const response = await fetch('/TopTech/cgi/auth.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ action: 'register', nume, email, telefon, parola })
+        const data = await $.ajax({
+            url: '/TopTech/cgi/auth.php',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ action: 'register', nume, email, telefon, parola })
         });
-        const data = await response.json();
         
         if (data.ok) {
             setSession(data.user);
@@ -102,12 +102,12 @@ async function registerCont({ nume, email, telefon, parola }) {
 
 async function loginCont(email, parola) {
     try {
-        const response = await fetch('/TopTech/cgi/auth.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ action: 'login', email, parola })
+        const data = await $.ajax({
+            url: '/TopTech/cgi/auth.php',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ action: 'login', email, parola })
         });
-        const data = await response.json();
         
         if (data.ok) {
             setSession(data.user);

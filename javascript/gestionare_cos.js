@@ -23,10 +23,7 @@ function saveCosLocal(cos) {
 
 async function adaugaInCos(produserele_id, cantitate = 1) {
     try {
-        const resp = await fetch("/TopTech/cgi/produse.php");
-        if (!resp.ok) throw new Error("Nu s-a putut incarca produsele");
-
-        const totiProdusele = await resp.json();
+        const totiProdusele = await $.get("/TopTech/cgi/produse.php");
         const produs = totiProdusele.find(p => p.id === produserele_id);
 
         if (!produs) {

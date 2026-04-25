@@ -3,10 +3,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (!listaCategorii) return;
 
     try {
-        const raspuns = await fetch("/TopTech/cgi/categorii.php");
-        if (!raspuns.ok) throw new Error("JSON categorii nu poate fi incarcat");
-
-        const categorii = await raspuns.json();
+        const categorii = await $.get("/TopTech/cgi/categorii.php");
         listaCategorii.innerHTML = "";
 
         categorii.forEach(categorie => {

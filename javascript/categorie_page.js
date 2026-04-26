@@ -49,17 +49,11 @@ async function initCategoriePage() {
     }
 
     try {
-        const [categoriiResp, produseResp] = await Promise.all([
-            fetch("/TopTech/cgi/categorii.php"),
-            fetch("/TopTech/cgi/produse.php")
+        // Modificare AJAX
+        const [categorii, produse] = await Promise.all([
+            $.get("/TopTech/cgi/categorii.php"),
+            $.get("/TopTech/cgi/produse.php")
         ]);
-
-        if (!categoriiResp.ok || !produseResp.ok) {
-            throw new Error("JSON nu poate fi incarcat");
-        }
-
-        const categorii = await categoriiResp.json();
-        const produse = await produseResp.json();
 
         const categorie = categorii.find(cat => cat.id === categoryId);
         const titlu = categorie ? categorie.nume : "Categorie Necunoscută";

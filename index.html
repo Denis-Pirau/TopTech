@@ -13,9 +13,10 @@
             <h1><a href="index.html">TopTech</a></h1>
         </div>
 
-        <form id="form-cautare" action="index.html" method="get">
+        <form id="form-cautare" action="index.html" method="get" style="position:relative;">
             <input type="text" id="input-cautare" name="q" placeholder="Caută produse" autocomplete="off">
             <button type="submit">Caută</button>
+            <div id="sugestii-cautare" style="display:none; position:absolute; top:100%; left:0; right:80px; background:white; z-index:1000; border:1px solid #ccc; max-height:200px; overflow-y:auto; color:black; text-align:left;"></div>
         </form>
 
         <nav>
@@ -53,6 +54,7 @@
         <p class="footer-copyright">&copy; 2026 TopTech</p>
     </footer>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="javascript/auth.js"></script>
     <script src="javascript/gestionare_cos.js"></script>
     <script src="javascript/categorii.js"></script>
